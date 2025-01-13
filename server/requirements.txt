@@ -12,3 +12,7 @@ underthesea
 motor
 transformers
 torch
+sentence_transformers
+accelerate
+datasets
+openai
