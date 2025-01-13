@@ -24,10 +24,12 @@ function ChatbotPage() {
 
     try {
       // Send message to chatbot API
-      const response = await ApiChatbot.postChatbotResponse({ messages: newChatHistory });
+      const response = await ApiChatbot.postChatbotResponse({
+        messages: JSON.stringify(newChatHistory), // Sử dụng 'message'
+      });
       if (response.success) {
         // Add chatbot response to chat history
-        setChatHistory([...newChatHistory, { role: 'chatbot', content: response.message }]);
+        setChatHistory([...newChatHistory, { role: 'chatbot', content: response.data }]);
       } else {
         toast.error('Failed to get response from chatbot.');
       }
