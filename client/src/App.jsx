@@ -20,6 +20,9 @@ function App() {
             <Button color="inherit" component={Link} to="/candidate-management">
               Candidate Management
             </Button>
+            <Button color="inherit" component={Link} to="/chatbot-management">
+              Assistant
+            </Button>
           </Toolbar>
         </AppBar>
 
