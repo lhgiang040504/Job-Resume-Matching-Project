@@ -63,12 +63,11 @@ function JobManagement() {
           });
 
           if (!response.success) {
-            toast.error(
-              `Error matching for ${candidate.name}: ${response.message}`
-            );
+            // toast.error(`Error matching for ${candidate.name}: ${response.message}`);
+            console.error(`Error matching for ${candidate.name}:`, response.message);
           }
         } catch (error) {
-          toast.error(`Error matching for ${candidate.name}: ${error.message}`);
+          // toast.error(`Error matching for ${candidate.name}: ${error.message}`);
           console.error(`Error matching for ${candidate.name}:`, error);
         }
       });

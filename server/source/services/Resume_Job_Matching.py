@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 # Predefined dictionary for major relatedness
 MAJOR_DICT = {
-    "computer science": ["software engineering", "data science", "artificial intelligence", "kỹ thuật phần mềm", "khoa học dữ liệu", "trí tuệ nhân tạo"],
+    "computer science": ["software engineering", "data science", "artificial intelligence", "kỹ thuật phần mềm", "khoa học dữ liệu", "trí tuệ nhân tạo", "informatics", "information technology"],
     "electrical engineering": ["electronics", "telecommunications", "embedded systems", "điện tử", "viễn thông", "hệ thống nhúng"],
     "economics": ["business administration", "finance", "accounting", "marketing", "quản trị kinh doanh", "tài chính", "kế toán", "tiếp thị"],
     # Add more majors and their related fields here
