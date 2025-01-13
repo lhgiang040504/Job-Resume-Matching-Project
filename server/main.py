@@ -5,6 +5,7 @@ from source.configs.db_connection import MongoDB
 from source.routes.CandidateManagement import router as candidate_route
 from source.routes.JobManagement import router as job_route
 from source.routes.JobResumeMatching import router as job_resume_matching_route
+from source.routes.chatbot import router as chatbot
 
 config = dotenv_values(".env")
 
@@ -23,7 +24,6 @@ app.add_middleware(
     allow_headers=["*"],           # Cho phép tất cả các header
 )
 
-
 @app.on_event("startup")
 async def startup_db_client():
     app.mongodb = MongoDB(uri=config['MONGODB_URI'], db_name=config['MONGODB_DB'])
@@ -38,3 +38,6 @@ async def shutdown_db_client():
 app.include_router(candidate_route, prefix="/candidates", tags=["candidates"])
 app.include_router(job_route, prefix="/jobs", tags=["jobs"])
 app.include_router(job_resume_matching_route, prefix="/jobresumematching", tags=["jobresumematching"])
+
+app.include_router(chatbot, prefix="/chatbot", tags=["chatbot"])
+
